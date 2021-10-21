@@ -1,11 +1,17 @@
-<h1>New Project</h1>
-
-<%= form_for(@project) do |f| %> 
-  <%= f.label(:name) %>
-  <%= f.text_field(:name) %>
-  <br />
-  <%= f.label(:tasks) %>
-  <%= text_area_tag("project[tasks]") %> 
-  <br />
-  <%= f.submit %>
-<% end %>
+<h1>All Projects</h1>
+<table>
+  <thead> 
+    <tr>
+      <td>Project Name</td>
+      <td>Total Project Size</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %> 
+      <tr>
+        <td><%= project.name %></td>
+        <td><%= project.total_size %></td> 
+      </tr>
+    <% end %> 
+  </tbody>
+</table>
